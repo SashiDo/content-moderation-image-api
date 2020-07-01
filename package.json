@@ -1,0 +1,50 @@
+{
+  "name": "content-moderation-image-api",
+  "version": "0.1.0",
+  "description": "Ready-to-use Node.JS REST API for classification of indecent images.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SashiDo/content-moderation-image-api.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.2.1"
+  },
+  "scripts": {
+    "start": "node index",
+    "dev": "NODE_ENV=development npm-run-all --parallel dev:*",
+    "dev:cloud": "parcel --no-cache ./src/cloud/main.js -t node -d cloud --no-cache",
+    "dev:parse-server": "NODE_ENV=development nodemon index",
+    "build": "NODE_ENV=production parcel build ./src/cloud/main.js -t node -d cloud",
+    "postinstall": "if [ \"$install\" != \"1\" ]; then export install=\"1\" && npm run build; fi"
+  },
+  "dependencies": {
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "@tensorflow/tfjs-node": "1.7.4",
+    "axios": "0.19.2",
+    "babel-loader": "8.1.0",
+    "cors": "2.8.5",
+    "nodemon": "2.0.4",
+    "nsfwjs": "2.2.0",
+    "parcel-bundler": "1.12.4"
+  },
+  "devDependencies": {
+    "npm-run-all": "4.1.5",
+    "parse": "2.3.0",
+    "parse-server": "3.6.0"
+  },
+  "nodemonConfig": {
+    "delay": "2000",
+    "watch": [
+      "./index.js",
+      "./src/cloud"
+    ]
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": true
+    }
+  }
+}
