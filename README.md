@@ -300,9 +300,9 @@ Basically, you need to follow the same steps as for SashiDo Deployment. Simply f
 
    The REST API is a part of the Content Moderation service, which also offers:
 
-   - **Automation Engine** that will automatically delete inappropriate images. Set the params and reduce manual work to the    bare minimum. - Coming Soon!
+   - [**Automation Engine**](https://github.com/SashiDo/content-moderation-automations) that will automatically delete inappropriate images. Set the params and reduce manual work to the    bare minimum. - Coming Soon!
 
-   - **Admin Panel** where all images in need of moderation are stacked up in a beautiful interface, which allows you to make decisions with just a click. - Coming Soon!
+   - [**Admin Panel**](https://github.com/SashiDo/content-moderation-application) where all images in need of moderation are stacked up in a beautiful interface, which allows you to make decisions with just a click. - Coming Soon!
 # Contribution
 
    Thanks for looking at this section. We’re open to any cool ideas, so if you have one and are willing to share - fork the repo, apply changes and open a pull request. :)
