@@ -1,12 +1,13 @@
-import "regenerator-runtime/runtime.js";
+const TeachableMachine = require("@sashido/teachablemachine-node");
 
-// We are using this model in lots of functions
-// it will be much easier that way :)
-import nsfwModel from "./ml_models/nsfw_model";
-global.nsfwModel = nsfwModel;
+const model = new TeachableMachine({
+  modelUrl: "https://teachablemachine.withgoogle.com/models/r6BBk-hiN/"
+});
 
-import app from "./app";
-
-import "./functions";
-
-export { app };
+model.classify({
+  imageUrl: "https://media-blog.sashido.io/content/images/2020/09/SashiDo_Dog.jpg",
+}).then((predictions) => {
+  console.log("Predictions:", predictions);
+}).catch((e) => {
+  console.log("ERROR", e);
+});
